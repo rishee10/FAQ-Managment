@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>FAQs</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Question</th>
+                <th>Answer</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for faq in faqs %}
+                <tr>
+                    <td>{{ faq.question }}</td>
+                    <td>{{ faq.answer|striptags }}</td>
+                    <td>
+                        <a href="{% url 'faq_detail' faq.id %}">View</a>
+                        <a href="{% url 'faq_update' faq.id %}">Update</a>
+                        <a href="{% url 'faq_delete' faq.id %}">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

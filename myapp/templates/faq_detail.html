@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>FAQ Detail</h1>
+    <p>Question: {{ faq.question }}</p>
+    <p>Answer: {{ faq.answer|striptags }}</p>
+    <p>Question (Hindi): {{ faq.question_hi }}</p>
+    <p>Answer (Hindi): {{ faq.answer_hi|striptags }}</p>
+    <p>Question (Bengali): {{ faq.question_bn }}</p>
+    <p>Answer (Bengali): {{ faq.answer_bn|striptags }}</p>
+    <a href="{% url 'faq_list' %}">Back to FAQs</a>
+{% endblock %}
